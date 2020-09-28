@@ -33,6 +33,20 @@ class FirstVC: UIViewController {
             print("viewWillAppear")
         }
         
-     
+    @IBAction func tappedLoginButton(_ sender: UIButton) {
+        
+        
+    
+        self.performSegue(withIdentifier: "DetailVC", sender: "nil")
+    
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let vc: DetailVC? = segue.destination as? DetailVC
+        
+        vc?.view.backgroundColor = .red
+        vc?.myLabel.text = "Vanessa"
+    }
 }
 
